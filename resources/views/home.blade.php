@@ -26,7 +26,7 @@
                 <div class="card-header">{{$users->name}}</div>
 
                 <div class="card-body">
-                    <a href="http://" class="btn btn-primary">Send Message</a>
+                    <a href="/message/{{$users->name}}" class="btn btn-primary">Send Message</a>
                 </div>
             </div>
         </div>

@@ -8,6 +8,15 @@ use Illuminate\Support\Facades\Auth;
 
 class MessageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    public function index($name)
+    {
+        $message = Message::All()->where('name',$name)->sortByDesc('created_at');
+        return view('message',compact('message'));
+    }
     public function sendMessage(Request $request)
     {
         $message = new Message();
